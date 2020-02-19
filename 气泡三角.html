@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body, div {
+      padding: 0;
+      margin: 0;
+    }
+    .main {
+      width: 600px;
+      margin: 100px auto;
+    }
+    .btn1, .btn2 {
+      width: 100px;
+      height: 26px;
+      line-height: 26px;
+      text-align: center;
+      background-color: yellow;
+      border: 1px solid yellow;
+      border-radius: 5px;
+      position: relative;
+    }
+    /* 在不给加另外元素的情况下加上三角形 */
+    /* 加伪元素，伪元素必须要有content */
+    .btn1::before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      /* background-color: red; */
+      /* 为了不影响其他的布局，可以让他浮动或者用绝对定位 */
+      position: absolute;
+      /* 设置了绝对定位和left，top等后要记得给父元素设置相对定位，不然
+      该伪元素会相对body定位 */
+      left: 45%;
+      top: -18px;
+      border: 9px solid blue;
+      border-color: transparent transparent yellow transparent;
+      border-style: dashed dashed yellow;
+    }
+    .btn2::before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      border: 9px solid yellow;
+      border-color: transparent yellow transparent transparent;
+      left: -18px;
+      top: 15%;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="btn1">
+      气泡按钮1
+    </div>
+    <hr>
+    <div class="btn2">
+      气泡按钮2
+    </div>
+  </div>
+</body>
+</html>

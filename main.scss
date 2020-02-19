@@ -1,0 +1,91 @@
+$gw: 180px;   // 定义全局变量
+$w: width;  // 定义特殊变量，用作属性时，用 #{$val}这种形式
+
+.box {
+    $lw: 9px;   // 定义局部变量
+    #{$w}: $gw / 2;  // 支持运算
+    .m {
+        width: $gw;   // Nesting 嵌套 父子关系
+    }
+
+    &:hover{   // & 代表当前父元素，即box
+        background-color: aqua;
+    }
+
+    @if 2*3 > 5{   // 条件语句
+        color: red;
+    }@else if 3*9 > 2{
+        color: black;
+    }@else{
+        color: yellow;
+    }
+}
+
+// 循环  还有from  …… to，to相当于<，through 相当于<=
+@for $i from 1 through 3{   
+    .item-#{$i}{
+        width: $gw;
+    }
+}
+
+// 遍历数组
+@each $fruit in banana apple mongo {
+    .fruit-#{$fruit}{
+        width: $gw;
+    }
+}
+
+// 遍历 key value对应的数据
+@each $player, $height in (kobe:2px, tim:1px, nash:9px) {
+    .#{$player}{
+        height: $height;
+    }
+}
+
+// 定义混用 mixin
+@mixin listStyleRest {
+    list-style: none;
+}
+
+ul {
+    @include listStyleRest();  // 引用mixin
+}
+
+// 带参数的
+@mixin set-border($color, $width) {
+    border: $color solid $width
+}
+
+p {
+    @include set-border(red, $gw)
+}
+
+// 函数
+@function px2em($n){
+    @return $n/100 + rem;
+}
+
+.fun {
+    width: px2em(200);
+}
+
+// 继承
+h1 {
+    width: 100px;
+}
+
+.ex {
+    @extend h1;
+    color: black;
+}
+
+// %占位符  通过extend来引用，这块代码如果没有被引用，则不会编译到css中去
+// 以此减小css体积
+%zw {
+    width: 100px;
+}
+
+h3 {
+    @extend %zw;
+    color: red;
+}

@@ -1,0 +1,77 @@
+.box {
+  width: 90px;
+  color: red;
+}
+
+.box .m {
+  width: 180px;
+}
+
+.box:hover {
+  background-color: aqua;
+}
+
+.item-1 {
+  width: 180px;
+}
+
+.item-2 {
+  width: 180px;
+}
+
+.item-3 {
+  width: 180px;
+}
+
+.fruit-banana {
+  width: 180px;
+}
+
+.fruit-apple {
+  width: 180px;
+}
+
+.fruit-mongo {
+  width: 180px;
+}
+
+.kobe {
+  height: 2px;
+}
+
+.tim {
+  height: 1px;
+}
+
+.nash {
+  height: 9px;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  border: red solid 180px;
+}
+
+.fun {
+  width: 2rem;
+}
+
+h1, .ex {
+  width: 100px;
+}
+
+.ex {
+  color: black;
+}
+
+h3 {
+  width: 100px;
+}
+
+h3 {
+  color: red;
+}
+/*# sourceMappingURL=main.css.map */

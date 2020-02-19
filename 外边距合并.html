@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed red;
+    }
+
+    .a {
+      margin: 20px;
+    }
+    .b {
+      /* 上下边距会被合并成50，而不是20+50 */
+      margin-top: 50px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="a"></div>
+  <div class="b"></div>
+</body>
+</html>

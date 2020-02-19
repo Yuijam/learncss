@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 这样就能出来四个三角形 */
+    .bd {
+      width: 0px;
+      height: 0px;
+      margin: 0 auto;
+      border: 30px solid red;
+      border-color: red green blue yellow;
+    }
+    .san {
+      width: 0px;
+      height: 0px;
+      margin: 0 auto;
+      border: 30px solid red;
+      border-color: transparent transparent yellow;
+      /* 下面这条是为了兼容有些ie */
+      border-style: dashed dashed solid;
+    }
+  </style>
+</head>
+<body>
+  <div class="bd">
+  </div>
+  <div class="san"></div>
+</body>
+</html>

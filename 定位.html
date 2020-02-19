@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+    }
+    .a {
+      /* 相对定位：相对于流式布局本来的位置 */
+      position: relative;
+      left: 100px;
+      top: 100px;
+    }
+    .b {
+      /* 绝对定位：往上找第一个具有BFC特性的父元素来进行相对定位 */
+      position: absolute;
+      left: 200px;
+    }
+    .parent {
+      /* 子绝父相，让父容器触发BFC特性，使得b相对parent定位，否则，b还是相对body定位 */
+      position: relative;
+      top: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="a">a</div>
+  <!-- a的相对定位不影响文档流的布局，之前占用的位置依然还在，所以c会接着文档流继续排 -->
+  <div class="c">c</div>
+  <div class="parent">
+    <div class="b">b</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 测试了，现在chrome默认字体大小应该是17px */
+    /* 如果出现中文尽量转化成unicode来写对应的中文，可以通过escape函数来转化编码 */
+    #uu {
+      font-size: 2em;
+    }
+    #aa {
+      font-size: 34px;
+    }
+    div {
+      border: 1px solid red;
+      height: 100px;
+      /* 给div设置了height后，再给lineheight设置个一样的就会达到文字垂直方向居中的效果 */
+      line-height: 100px;
+      /* 水平方向居中 */
+      text-align: center;
+    }
+    p {
+      text-decoration: overline;
+    }
+
+    #pp {
+      /* 先去掉上面加的decoration */
+      text-decoration: none;
+      /* 加上边框 */
+      border: 1px solid red;
+      /* 设置宽度，这个时候文字会被换行 */
+      width: 200px;
+      /* 设置高度后，文字会超出边框 */
+      height: 100px;
+      /* 设置让他不换行，文字会水平方向超出边框 */
+      white-space: nowrap;
+      /* 把超出边框的部分隐藏掉，不让他影响边框外的 */
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    <span id="uu">放大发</span>
+    <span id="aa">放大发</span>
+    <div>
+      div
+    </div>
+    <p>text decoration</p>
+  </p>
+  <p id="pp">
+      第2集 | 纪晓岚受     和珅与钦差福康安陷害，被罢官免职。他巧施计谋，以须臾不离口的烟袋点燃路边一串鞭炮，帮助小月、莫愁在混乱之中及时逃脱官兵的羁押。小月为避追杀，东躲西藏，不期而同曾自称“许仙”的皇上，皇上的龙颜自然
+  </p>
+</body>
+</html>
